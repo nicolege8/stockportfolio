@@ -3,14 +3,14 @@ import os, requests, json
 
 load_dotenv()  # reads .env into environment
 
-API_KEY = os.getenv("ALPHAVERSE_API_KEY")
+API_KEY = '0ZA4ALIL661ZO90Z'
 base_url = "https://www.alphavantage.co/query"
 params = {
     "function":   "NEWS_SENTIMENT",
     "tickers":    "MSFT",
     "topics": "technology",
     "time_from":  "20240101T0000",
-    "time_to":    "20250512T150033",
+    "time_to":    "20240926T1212",
     "limit":      "1000",
     "apikey":     API_KEY,
 }
@@ -19,10 +19,10 @@ r = requests.get(base_url, params=params)
 data = r.json()
 # print(data)
 
-with open("msft3_sentiment.json", "w") as f:
+with open("msft_sentiment_12.json", "w") as f:
     json.dump(data, f, indent=2)
 
-print("Saved", len(data.get("feed", [])), "articles to msft3_sentiment.json")
+print("Saved", len(data.get("feed", [])), "articles to msft_sentiment_12.json")
 
 
 # import requests
