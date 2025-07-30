@@ -7,9 +7,10 @@ API_KEY = os.getenv("ALPHAVERSE_API_KEY")
 base_url = "https://www.alphavantage.co/query"
 params = {
     "function":   "NEWS_SENTIMENT",
-    "tickers":    "V",
+    "tickers":    "MSFT",
+    "topics": "technology",
     "time_from":  "20240101T0000",
-    "time_to":    "20250629T2359",
+    "time_to":    "20250512T150033",
     "limit":      "1000",
     "apikey":     API_KEY,
 }
@@ -18,10 +19,10 @@ r = requests.get(base_url, params=params)
 data = r.json()
 # print(data)
 
-with open("v_sentiment.json", "w") as f:
+with open("msft3_sentiment.json", "w") as f:
     json.dump(data, f, indent=2)
 
-print("Saved", len(data.get("feed", [])), "articles to v_sentiment.json")
+print("Saved", len(data.get("feed", [])), "articles to msft3_sentiment.json")
 
 
 # import requests
