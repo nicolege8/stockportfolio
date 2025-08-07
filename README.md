@@ -24,19 +24,19 @@
 
 ## Table of Contents
 
-- [Technologies & Prerequisites](#-technologies--prerequisites)
-- [Key Features](#-key-features)
-- [Installation Guide](#-installation-guide)
-- [Quick Start](#-quick-start)
-- [API Documentation](#-api-documentation)
-- [Code Examples](#-code-examples)
-- [Project Structure](#-project-structure)
-- [Usage Examples](#-usage-examples)
-- [Advanced Features](#-advanced-features)
-- [Contributing](#-contributing)
-- [Troubleshooting](#-troubleshooting)
-- [Acknowledgments](#-acknowledgments)
-- [License](#-license)
+- [Technologies & Prerequisites](#technologies--prerequisites)
+- [Key Features](#key-features)
+- [Installation Guide](#installation-guide)
+- [Quick Start](#quick-start)
+- [API Documentation](#api-documentation)
+- [Code Examples](#code-examples)
+- [Project Structure](#project-structure)
+- [Usage Examples](#usage-examples)
+- [Advanced Features](#advanced-features)
+- [Contributing](#contributing)
+- [Troubleshooting](#troubleshooting)
+- [Acknowledgments](#acknowledgments)
+- [License](#license)
 
 ## Technologies & Prerequisites
 
