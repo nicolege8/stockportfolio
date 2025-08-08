@@ -16,6 +16,8 @@ from sklearn.preprocessing import MinMaxScaler
 import matplotlib.pyplot as plt
 import glob
 import os
+import torch
+import joblib
 
 file_paths = ['/JPM.csv', '/MSFT.csv', '/SNY.csv', '/VZ.csv', '/WBD.csv']
 dataframes = []
@@ -123,7 +125,7 @@ for epoch in range(EPOCHS):
 
     print(f"Epoch {epoch+1}, Loss: {total_loss / len(train_loader):.5f}")
 
-    #trains your Transformer model for 30 epochs
+#trains Transformer model for 30 epochs
 
 model.eval()
 predictions, actuals = [], []
@@ -249,6 +251,10 @@ for epoch in range(EPOCHS):
         total_loss += loss.item()
 
     print(f"Epoch {epoch+1}, Loss: {total_loss / len(train_loader):.5f}")
+
+torch.save(model.state_dict(), 'multi_stock_transformer.pt')
+print("✅ PyTorch Transformer model saved to multi_stock_transformer.pt")
+
 
 model.eval()
 preds, actuals = [], []
@@ -591,6 +597,11 @@ for fold, (train_idx, test_idx) in enumerate(tscv.split(X_scaled)):
     plt.xlabel('Predicted')
     plt.ylabel('True')
     plt.show()
+
+### ADD THIS LINE ###
+joblib.dump(clf, 'random_forest_classifier.joblib')
+print(f"✅ Random Forest model from final fold saved to random_forest_classifier.joblib")
+
 
 # Average F1 Score
 avg_f1 = np.mean([fold['weighted avg']['f1-score'] for fold in all_reports])
